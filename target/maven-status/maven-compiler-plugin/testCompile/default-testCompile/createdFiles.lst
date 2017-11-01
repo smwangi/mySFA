@@ -1,8 +1,0 @@
-com/tl/tl_crm/controller/AccountTypeControllerTest.class
-com/tl/tl_crm/dao/VisitModeDaoImplTest.class
-com/tl/tl_crm/dao/AccountTypeDaoImplTest.class
-com/tl/tl_crm/dao/EntityDaoImplTest.class
-com/tl/tl_crm/configuration/HibernateTestConfiguration.class
-com/tl/tl_crm/configuration/Hibernate5TestConfiguration.class
-com/tl/tl_crm/service/VisitModeServiceImplTest.class
-com/tl/tl_crm/service/AccounttypeServiceImplTest.class
