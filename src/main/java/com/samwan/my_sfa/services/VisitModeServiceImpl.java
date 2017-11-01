@@ -5,7 +5,7 @@
  */
 package com.samwan.my_sfa.services;
 
-import com.tl.tl_crm.dao.VisitModeDao;
+import com.samwan.my_sfa.dao.VisitModeDao;
 import com.samwan.my_sfa.model.CrmVisitModes;
 import java.math.BigDecimal;
 import java.util.List;

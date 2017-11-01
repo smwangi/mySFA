@@ -5,7 +5,7 @@
  */
 package com.samwan.my_sfa.services;
 
-import com.tl.tl_crm.dao.AccountTypeDao;
+import com.samwan.my_sfa.dao.AccountTypeDao;
 import com.samwan.my_sfa.model.CrmAccounttypes;
 import java.math.BigDecimal;
 import java.util.List;

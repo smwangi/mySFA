@@ -5,7 +5,7 @@
  */
 package com.samwan.my_sfa.services;
 
-import com.tl.tl_crm.dao.LeadSourceDao;
+import com.samwan.my_sfa.dao.LeadSourceDao;
 import com.samwan.my_sfa.model.CrmOpportunitysources;
 import java.math.BigDecimal;
 import java.util.List;

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tl.tl_crm.configuration;
+package com.samwan.my_sfa.configuration;
 
 import java.util.Properties;
 import javax.sql.DataSource;

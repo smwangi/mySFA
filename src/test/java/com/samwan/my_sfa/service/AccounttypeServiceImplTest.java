@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tl.tl_crm.service;
+package com.samwan.my_sfa.service;
 
-import com.tl.tl_crm.model.CrmAccounttypes;
+import com.samwan.my_sfa.model.CrmAccounttypes;
 import java.util.ArrayList;
 import java.util.List;
 import org.mockito.InjectMocks;
@@ -14,7 +14,7 @@ import org.mockito.Mock;
 import static org.mockito.Mockito.doNothing;
 import org.mockito.Spy;
 import org.testng.annotations.Test;
-import com.tl.tl_crm.dao.AccountTypeDao;
+import com.samwan.my_sfa.dao.AccountTypeDao;
 
 /**
  *

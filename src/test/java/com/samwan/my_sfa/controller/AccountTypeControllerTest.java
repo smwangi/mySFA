@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tl.tl_crm.controller;
+package com.samwan.my_sfa.controller;
 
-import com.tl.tl_crm.model.CrmAccounttypes;
-import com.tl.tl_crm.services.AccountTypeService;
+import com.samwan.my_sfa.model.CrmAccounttypes;
+import com.samwan.my_sfa.services.AccountTypeService;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;

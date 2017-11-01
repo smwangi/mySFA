@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tl.tl_crm.dao;
+package com.samwan.my_sfa.dao;
 
 
-import com.tl.tl_crm.configuration.HibernateTestConfiguration;
+import com.samwan.my_sfa.configuration.HibernateTestConfiguration;
 import javax.sql.DataSource;
 import org.dbunit.database.DatabaseDataSourceConnection;
 import org.dbunit.database.IDatabaseConnection;

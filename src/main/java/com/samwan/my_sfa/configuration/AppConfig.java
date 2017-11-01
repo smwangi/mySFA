@@ -26,7 +26,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartResolver;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages={ "com.samwan.mysfa"})
+@ComponentScan(basePackages={ "com.samwan.my_sfa"})
 public class AppConfig extends WebMvcConfigurerAdapter {
    
     	/*@Bean

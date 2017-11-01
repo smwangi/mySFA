@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tl.tl_crm.service;
+package com.samwan.my_sfa.service;
 
-import com.tl.tl_crm.dao.VisitModeDao;
-import com.tl.tl_crm.model.CrmVisitModes;
-import com.tl.tl_crm.services.VisitModeServiceImpl;
+import com.samwan.my_sfa.dao.VisitModeDao;
+import com.samwan.my_sfa.model.CrmVisitModes;
+import com.samwan.my_sfa.services.VisitModeServiceImpl;
 import java.math.BigDecimal;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

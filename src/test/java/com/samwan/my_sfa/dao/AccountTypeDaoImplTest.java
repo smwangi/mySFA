@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tl.tl_crm.dao;
+package com.samwan.my_sfa.dao;
 
-import com.tl.tl_crm.model.CrmAccounttypes;
+import com.samwan.my_sfa.model.CrmAccounttypes;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import org.dbunit.dataset.IDataSet;

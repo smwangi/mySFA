@@ -5,7 +5,7 @@
  */
 package com.samwan.my_sfa.services;
 
-import com.tl.tl_crm.dao.SystemModuleDao;
+import com.samwan.my_sfa.dao.SystemModuleDao;
 import com.samwan.my_sfa.model.CrmSystemModules;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

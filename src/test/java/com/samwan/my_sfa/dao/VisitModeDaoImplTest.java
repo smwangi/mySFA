@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tl.tl_crm.dao;
+package com.samwan.my_sfa.dao;
 
-import com.tl.tl_crm.model.CrmVisitModes;
+import com.samwan.my_sfa.model.CrmVisitModes;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.Date;
