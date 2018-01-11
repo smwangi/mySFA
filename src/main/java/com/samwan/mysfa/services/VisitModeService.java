@@ -6,13 +6,10 @@
 package com.samwan.mysfa.services;
 
 import com.samwan.mysfa.model.VisitModes;
-import org.springframework.stereotype.Service;
-
 /**
  *
  * @author smwangi
  */
-@Service
 public interface VisitModeService extends BaseService<VisitModes,Long> {
     
 }

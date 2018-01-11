@@ -15,8 +15,12 @@ import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import org.mockito.MockitoAnnotations;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import java.util.List;
+import java.util.ArrayList;
+import org.mockito.Spy;
 
 /**
  *
@@ -25,23 +29,44 @@ import org.testng.annotations.Test;
 public class VisitModeServiceImplTest {
     
     @Mock
-    VisitModeDao _dao;
+    VisitModeDao visitModeDao;
     
     @InjectMocks
-    VisitModeServiceImpl _service;
+    VisitModeServiceImpl visitModeServiceImpl;
     
-    @BeforeMethod
+    @Spy
+    List<VisitModes> visitModes = new ArrayList<>();
+    
+    @BeforeClass
     public void initMocks() {
        MockitoAnnotations.initMocks(this);
+       visitModes = getVisitModes();
     }
     
     @Test
     public void findOne() {
-        VisitModes visitModes = new VisitModes();
+        VisitModes visitModes = this.visitModes.get(1);
+        
         
         //Mockito.doNothing().when(_dao).fetchOne(BigDecimal.ONE);
-        when(_dao.fetchOne(BigDecimal.ONE.longValue())).thenReturn(visitModes);
-        _service.fetchOne(BigDecimal.ONE.longValue());
-        verify(_dao,atLeastOnce()).fetchOne(BigDecimal.ONE.longValue());
+        when(visitModeDao.fetchOne(new Long("2"))).thenReturn(visitModes);
+        visitModeServiceImpl.fetchOne(new Long("2"));
+        verify(visitModeDao,atLeastOnce()).fetchOne(new Long("2"));
+    }
+    
+    private List<VisitModes> getVisitModes() {
+        VisitModes vMode1 = new VisitModes();
+        vMode1.setModeId(new Long("1"));
+        vMode1.setIsactive(Boolean.valueOf("TRUE"));
+        vMode1.setName("Itenarary");
+        
+        VisitModes vMode2 = new VisitModes();
+        vMode2.setModeId(new Long("2"));
+        vMode2.setIsactive(Boolean.valueOf("TRUE"));
+        vMode2.setName("Itenarary 2");
+        
+        visitModes.add(vMode1);
+        visitModes.add(vMode2);
+        return visitModes;
     }
 }

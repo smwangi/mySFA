@@ -22,6 +22,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.junit.Before;
 import static org.mockito.Mockito.mock;
+import org.testng.annotations.BeforeMethod;
 
 /**
  *
@@ -29,17 +30,16 @@ import static org.mockito.Mockito.mock;
  */
 public class VisitModeDaoImplTest extends EntityDaoImplTest {
 
-//    @Autowired
-//    private AbstractBaseDao<VisitModes,Integer> abstractBaseDao;
-//    
-//    @Autowired
-//    @Mock
-//    private  VisitModeDao _visitModeDao;
-    private VisitModeDao _visitModeDao;
+    @Autowired
+    private AbstractBaseDao<VisitModes,Long> abstractBaseDao;
+    
+    @Autowired
+    @Mock
+    private  VisitModeDao visitModeDao;
     
     @Before
     public void setUpMock(){
-        _visitModeDao = mock(VisitModeDao.class);
+        visitModeDao = mock(VisitModeDao.class);
     }
     
     @Override
@@ -48,40 +48,46 @@ public class VisitModeDaoImplTest extends EntityDaoImplTest {
       return dataset;
     }
     
-    public void init(){
-        //abstractBaseDao.setEntity(VisitModes.class);
+    @BeforeMethod
+    protected void init(){
+        abstractBaseDao.setEntity(VisitModes.class);
     }
     
-   
-    
-    //@Test
+    @Test
     public void addVisitModeTest() {
+        init();
         VisitModes visitModes = new VisitModes();
         visitModes.setAddedby(BigInteger.ZERO);
         visitModes.setDateadded(Date.valueOf(LocalDate.now()));
         visitModes.setDescription("Description");
-        visitModes.setIsactive(Short.MIN_VALUE);
-        visitModes.setModeId(BigDecimal.ONE.longValue());
-        visitModes.setName("Visit Mode Name");
+        visitModes.setIsactive(Boolean.valueOf("TRUE"));
+        visitModes.setModeId(new Long(4));
+        visitModes.setName("Just passing by");
         
-        _visitModeDao.save(visitModes);
+        visitModeDao.save(visitModes);
         
-        Assert.assertNotNull(_visitModeDao);
+        VisitModes vMode = visitModeDao.fetchOne(new Long(4));
+        Assert.assertEquals(visitModes, vMode);
+        Assert.assertEquals(visitModes.getModeId(), vMode.getModeId());
+        
+        Assert.assertTrue(visitModeDao.fetchAll(Boolean.valueOf("TRUE")).size() > 0);
                 
     }
     
-    //@Test
+    @Test
     public void findOneTest(){
         init();
         VisitModes visitModes = new VisitModes();
-        visitModes.setModeId(BigDecimal.ONE.longValue());
+        visitModes.setModeId(new Long("1"));
+        visitModes.setIsactive(Boolean.TRUE);
         
-      VisitModes visitModes1 =  _visitModeDao.fetchOne(BigDecimal.ONE.longValue());
-      
-      Assert.assertEquals(visitModes, visitModes1);
+        VisitModes visitModes1 =  visitModeDao.fetchOne(new Long("1"));
+        visitModes1.setIsactive(Boolean.TRUE);
+        System.out.println(visitModes1.getIsactive());
+        Assert.assertEquals(visitModes, visitModes1);
     }
     
-    //@Test
+    @Test
     public void fetchAll() {
         init();
         List<VisitModes> visitModes = new ArrayList<>();
@@ -89,10 +95,8 @@ public class VisitModeDaoImplTest extends EntityDaoImplTest {
         visitMode.setModeId(BigDecimal.ONE.longValue());
         visitModes.add(visitMode);
         
-        List<VisitModes> vModes =  new ArrayList<>();// _visitModeDao.fetchAll();
-        
         //Assert.assertEquals(visitModes, vModes);
-        Assert.assertTrue(visitModes.size() >0);
+        Assert.assertTrue(visitModes.size() > 0);
 //        Assert.assertTrue(vModes.size() > 0);
    }
 }

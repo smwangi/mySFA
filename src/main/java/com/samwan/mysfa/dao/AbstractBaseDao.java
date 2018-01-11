@@ -20,8 +20,8 @@ import org.springframework.stereotype.Component;
  *
  * @author smwangi
  */
-@Component
-public abstract class AbstractBaseDao<E,PK extends Serializable> /*implements  BaseDao<E,PK>*/{
+@Component("abstractBaseDao")
+public abstract class AbstractBaseDao<E,PK extends Serializable> implements  BaseDao<E,PK> {
     
     private Class<E> entity;
     
@@ -45,12 +45,12 @@ public abstract class AbstractBaseDao<E,PK extends Serializable> /*implements  B
         this.entity = entity;
     }
      
-    //@Override
+    @Override
     public E fetchOne(Long id) {
        return (E) getSession().get(entity, id);
     }
 
-    //@Override
+    @Override
     public List<E> fetchAll(Boolean isActive) {
         /*CriteriaQuery criteriaQuery = getSession().getCriteriaBuilder().createQuery(entity);
         criteriaQuery.select(criteriaQuery.from(entity));
@@ -59,23 +59,23 @@ public abstract class AbstractBaseDao<E,PK extends Serializable> /*implements  B
        return q.getResultList();*///getCurrentSession().createQuery("FROM " +entity.getSimpleName() ).list();
        Criteria criteria = getSession().createCriteria(entity);
        criteria.add(Restrictions.eq("isactive", isActive));
-       List<E> result = (List<E>)criteria.uniqueResult();
+       List<E> result = (List<E>)criteria.list();
        return result;
     }
 
-    //@Override
+    @Override
     public E saveorupdate(E entity) {
         getSession().saveOrUpdate(entity);
         return entity;
     }
     
-    //@Override
+    @Override
     public E save(E entity) {
         getSession().save(entity);
        return entity;
     }
 
-    //@Override
+    @Override
     public E update(E entity) {
         getSession().update(entity);
         return entity;

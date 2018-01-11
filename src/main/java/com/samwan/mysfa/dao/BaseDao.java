@@ -19,7 +19,7 @@ public interface BaseDao<E,PK extends Serializable> {
     
     E fetchOne(final Long id);
     
-    List<E> fetchAll(Boolean isActive);
+    List<E> fetchAll(final Boolean isActive);
     
     E saveorupdate(final E entity);
     

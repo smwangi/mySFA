@@ -12,12 +12,14 @@ import java.math.BigDecimal;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author smwangi
  */
 @Component
+@Service
 public class VisitModeServiceImpl implements VisitModeService {
 
     @Autowired

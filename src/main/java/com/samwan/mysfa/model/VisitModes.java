@@ -27,10 +27,10 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author smwangi
  */
 @Entity
-@Table(name = "VISIT_MODES")//, catalog = "", schema = "TANGAZOLETUCRM")
+@Table(name = "VISITMODES")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "VisitModes.findAll", query = "SELECT c FROM VisitModes c")
+    @NamedQuery(name = "VisitModes.findAll", query = "SELECT c FROM VisitModes c where c.isactive = :isactive")
     , @NamedQuery(name = "VisitModes.findByModeId", query = "SELECT c FROM VisitModes c WHERE c.modeId = :modeId")
     , @NamedQuery(name = "VisitModes.findByName", query = "SELECT c FROM VisitModes c WHERE c.name = :name")
     , @NamedQuery(name = "VisitModes.findByDescription", query = "SELECT c FROM VisitModes c WHERE c.description = :description")
@@ -53,7 +53,7 @@ public class VisitModes implements Serializable {
     @Column(name = "DESCRIPTION", length = 200)
     private String description;
     @Column(name = "ISACTIVE")
-    private Short isactive;
+    private Boolean isactive;
     @Column(name = "ADDEDBY")
     private BigInteger addedby;
     @Column(name = "DATEADDED")
@@ -91,11 +91,11 @@ public class VisitModes implements Serializable {
         this.description = description;
     }
 
-    public Short getIsactive() {
+    public Boolean getIsactive() {
         return isactive;
     }
 
-    public void setIsactive(Short isactive) {
+    public void setIsactive(Boolean isactive) {
         this.isactive = isactive;
     }
 

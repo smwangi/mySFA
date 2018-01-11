@@ -18,11 +18,6 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Component
 @Repository("accountTypeDao")
-@Transactional
 public class AccountTypeDaoImpl extends AbstractBaseDao<AccountTypes,Long> implements AccountTypeDao{
 
-//    public AccountTypeDaoImpl(){
-//        super.setEntity(AccountTypes.class);
-//    }
-//    
 }

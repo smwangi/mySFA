@@ -7,5 +7,7 @@ and open the template in the editor.
 
 
 <dataset>
-    <visitmodes MODE_ID="1" NAME="Visit Mode" />
+    <visitmodes MODE_ID="1" NAME="Walk in"  />
+    <visitmodes MODE_ID="2" NAME="Planned"  />
+    <visitmodes MODE_ID="3" NAME="Impromptu"  />
 </dataset>

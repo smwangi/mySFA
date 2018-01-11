@@ -14,7 +14,6 @@ import org.springframework.stereotype.Repository;
  * @author smwangi
  */
 @Component
-@Repository
 public interface VisitModeDao extends BaseDao<VisitModes,Long> {
     
 }
